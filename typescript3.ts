@@ -51,3 +51,54 @@ let sing = (): void => {
 let error = (): never => {
   throw Error('ooops');
 };
+
+// interface (like custom type, useful for React)
+interface RobotArmy {
+  count: number;
+  type: string;
+  magic: string;
+}
+
+let fightRobotArmy = (robots: RobotArmy) => {
+  console.log('Fight!');
+};
+
+// Type assertion
+interface CatArmy {
+  count: number;
+  type: string;
+  magic: string;
+}
+
+let dog = {} as CatArmy;
+dog.count;
+
+// Optional properties
+interface LizardArmy {
+  count: number;
+  type: string;
+  magic?: string;
+}
+
+let fightLizardArmy = (lizards: LizardArmy): void => {
+  console.log('Fight!');
+};
+
+fightLizardArmy({ count: 3, type: 'gecko' });
+
+// Classes
+class Animal {
+  // private keyword prevents us from accessing .sing outside this class declaration
+  private sing: string = 'lalalala';
+
+  constructor(sound: string) {
+    this.sing = sound;
+  }
+
+  greet() {
+    return `Hello ${this.sing}`;
+  }
+}
+
+let lion = new Animal('Rawr');
+console.log(lion.greet());
