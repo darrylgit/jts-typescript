@@ -33,3 +33,21 @@ enum Size {
 }
 let sizeName: string = Size[2];
 let sizeValue: number = Size.Small;
+
+// Any (use with caution)
+let whatever: any = 'oh nooooooooooo';
+whatever = 5;
+whatever = true;
+console.log(whatever);
+
+// void (lack of return value)
+let sing = (): void => {
+  console.log('Hello world');
+};
+
+// never
+// Tests that a function never returns and a variable is never true
+// Differs from void in the sense that never functions cannot have a reachable end point
+let error = (): never => {
+  throw Error('ooops');
+};

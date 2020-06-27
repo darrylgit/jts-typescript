@@ -27,3 +27,18 @@ var Size;
 })(Size || (Size = {}));
 var sizeName = Size[2];
 var sizeValue = Size.Small;
+// Any (use with caution)
+var whatever = 'oh nooooooooooo';
+whatever = 5;
+whatever = true;
+console.log(whatever);
+// void (lack of return value)
+var sing = function () {
+    console.log('Hello world');
+};
+// never
+// Tests that a function never returns and a variable is never true
+// Differs from void in the sense that never functions cannot have a reachable end point
+var error = function () {
+    throw Error('ooops');
+};
