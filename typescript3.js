@@ -54,6 +54,7 @@ fightLizardArmy({ count: 3, type: 'gecko' });
 // Classes
 var Animal = /** @class */ (function () {
     function Animal(sound) {
+        // private keyword prevents us from accessing .sing outside this class declaration
         this.sing = 'lalalala';
         this.sing = sound;
     }
@@ -64,3 +65,10 @@ var Animal = /** @class */ (function () {
 }());
 var lion = new Animal('Rawr');
 console.log(lion.greet());
+// Union
+var confused = 'hello';
+confused = 3;
+// Type inferences
+var lol = 6;
+// lol = 'Hey!';
+// Type '"Hey!"' is not assignable to type 'number'.

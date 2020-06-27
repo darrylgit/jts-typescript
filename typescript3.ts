@@ -102,3 +102,13 @@ class Animal {
 
 let lion = new Animal('Rawr');
 console.log(lion.greet());
+
+// Union
+let confused: string | number = 'hello';
+confused = 3;
+
+// Type inferences
+let lol = 6;
+
+// lol = 'Hey!';
+// Type '"Hey!"' is not assignable to type 'number'.
